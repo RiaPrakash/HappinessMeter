@@ -4,6 +4,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab2Page } from './tab2.page';
+import { Chart } from 'chart.js';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+
+
+
 
 @NgModule({
   imports: [
