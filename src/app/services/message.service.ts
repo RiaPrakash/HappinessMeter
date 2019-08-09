@@ -21,7 +21,7 @@ export class MessageService {
   }
 
   computeSentimentScore(message: Message){
-    const score: number = this.sentiment.analyze(message.message).comparative;
+    const score: number = this.sentiment.analyze(message.message).comparative.toFixed(2);
     message.score = score;
     return score;
   }

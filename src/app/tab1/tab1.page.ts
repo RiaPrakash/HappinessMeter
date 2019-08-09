@@ -77,7 +77,6 @@ export class Tab1Page {
     this.message.id="1"; //edit this
     this.messageService.computeSentimentScore(this.message);
     this.message.dateCreated=new Date().toISOString();
-    console.log(this.message);
     if(this.message.score > 0.2){
       this.createMessage();
     } else {
