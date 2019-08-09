@@ -1,6 +1,7 @@
 import { Component, SystemJsNgModuleLoader } from '@angular/core';
 import { MessageService } from '../services/message.service';
 import { Message } from '../models/message';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -12,7 +13,8 @@ export class Tab1Page {
   messages: Message[];
   message: Message;
 
-  constructor(private messageService: MessageService) {
+  constructor(private messageService: MessageService,
+    private alertCon: AlertController) {
     this.message = new Message();
     this.messages = [];
   }
@@ -42,11 +44,28 @@ export class Tab1Page {
     this.messageService.createMessage(this.message);
   }
 
+  async tooNegative(){
+    const alert = await this.alertCon.create({
+      header: 'Bad Message',
+      message: 'Sorry, your message is way too negative. Try be more positive, I guess?',
+      buttons: [{
+        text: 'Close',
+        role: 'cancel'
+      }]
+    });
+    return await alert.present();
+  }
+
   send(){
-    this.message.id="1";
-    this.message.score=2;
+    this.message.id="1"; //edit this
+    this.messageService.computeSentimentScore(this.message);
     this.message.dateCreated=new Date().toISOString();
     console.log(this.message);
-    this.createMessage();
+    if(this.message.score > 0.2){
+      this.createMessage();
+    } else {
+      this.tooNegative();
+    }
+    
   }
 }
