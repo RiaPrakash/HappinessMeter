@@ -20,6 +20,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
     AppRoutingModule, 
     AngularFireModule.initializeApp(environment.firebase)],
   providers: [
+    AngularFirestore,
     StatusBar,
     SplashScreen,
     AngularFirestore,
