@@ -12,7 +12,7 @@
   <ion-card color="dark">
     <ion-item>
         <ion-card color="light">
-          <ion-input [(ngModel)]="message.message"></ion-input>
+          <ion-input type="text" clearInput = true [(ngModel)]="message.message"></ion-input>
         </ion-card>
         <ion-button color="secondary" (click)="send()">Send</ion-button>
     </ion-item>
