@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MessageService } from '../services/message.service';
 import { Message } from '../models/message';
+import * as Sentiment from 'sentiment';
 
 @Component({
   selector: 'app-tab1',
