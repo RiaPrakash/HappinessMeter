@@ -10,12 +10,30 @@ import * as Sentiment from 'sentiment';
 })
 export class Tab1Page {
 
+
+  // messagesTemp: string[];
+  messageExample: Message[];
   messages: Message[];
   message: Message;
+
 
   constructor(private messageService: MessageService) {
     this.message = new Message();
     this.messages = [];
+    // this.messagesTemp = ['hi', 'hey', 'sup'];
+    this.messageExample = [{  id: '1',
+      score: 3,
+      message: 'yay love and happiness',
+      dateCreated: '17/05/1999',
+      owner: 'ria'
+    },
+    {  id: '2',
+      score: 3,
+      message: 'amazine',
+      dateCreated: '17/05/1999',
+      owner: 'amik'
+    }
+  ]
   }
 
   ngOnInit() {
