@@ -35,11 +35,11 @@
       <ion-card class="welcome-card">
         <ion-card-header>
           <ion-card-subtitle>Date: {{message.dateCreated}}</ion-card-subtitle>
-          <ion-card-subtitle>Score: {{message.score}}</ion-card-subtitle>
-          <ion-card-title>Owner of message: {{message.owner}}</ion-card-title>
+          <ion-card-subtitle>Happiness Score: {{message.score}}</ion-card-subtitle>
+          <ion-card-title>{{message.message}}</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-          <p>Content: {{message.message}}</p>
+          <p>Message from {{message.owner}} :)</p>
         </ion-card-content>
       </ion-card>
     </div>
