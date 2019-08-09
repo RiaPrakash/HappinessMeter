@@ -9,12 +9,19 @@
 <ion-content>
   
   <!-- Input Message -->
-  <ion-card color="dark">
+  <ion-card color="medium">
     <ion-item>
-        <ion-card color="light">
-          <ion-input type="text" clearInput = true [(ngModel)]="message.message"></ion-input>
+        <ion-card color="light" class="itemCustom">
+          <ion-input placeholder="Message" [(ngModel)]="message.message"></ion-input>
         </ion-card>
-        <ion-button color="secondary" (click)="send()">Send</ion-button>
+    </ion-item>
+    <ion-item>
+        <ion-card color="light" class="itemCustom">
+            <ion-input placeholder="Author" [(ngModel)]="message.owner"></ion-input>
+        </ion-card>
+    </ion-item>
+    <ion-item>    
+        <ion-button class="centerItem" color="secondary" (click)="send()">Send</ion-button>
     </ion-item>
   </ion-card>
   
