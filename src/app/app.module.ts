@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { AngularFirestore } from '@angular/fire/firestore';
+
 import { ChartsModule } from 'ng2-charts';
 import { Chart } from 'chart.js';
 
@@ -33,6 +34,7 @@ myChart: Chart;
     AngularFirestore,
     StatusBar,
     SplashScreen,
+    AngularFirestore,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
