@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, SystemJsNgModuleLoader } from '@angular/core';
 import { MessageService } from '../services/message.service';
 import { Message } from '../models/message';
 import * as Sentiment from 'sentiment';
@@ -39,5 +39,13 @@ export class Tab1Page {
 
   createMessage() {
     this.messageService.createMessage(this.message);
+  }
+
+  send(){
+    this.message.id="1";
+    this.message.score=2;
+    this.message.dateCreated=new Date().toISOString();
+    console.log(this.message);
+    this.createMessage();
   }
 }
