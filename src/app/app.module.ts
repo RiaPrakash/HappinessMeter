@@ -12,6 +12,8 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { AngularFirestore } from '@angular/fire/firestore';
 
+import { AngularFirestore } from '@angular/fire/firestore';
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
