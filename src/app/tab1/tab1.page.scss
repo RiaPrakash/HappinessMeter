@@ -1,20 +1,32 @@
 .welcome-card img {
   max-height: 35vh;
   overflow: hidden;
+ 
+}
+.title-card {
+  // color: #657b83;
+  // visibility: hidden;
+}
+.welcome-card {
+  background-color:#FDEFC0;
 }
 
 .itemCustom {
   width: 100%;
-  // color: #eee8d5
+  background-color: #eee8d5;
+  height: 6vh;
 }
 
+
 .centerItem {
-  margin-left: 47%;
-  // width: 5%;
+  margin-left: 45%;
+  width: 10%;
+  height: 6vh;
 
 }
 
 h1 {
   margin-left: 1%;
   color: #2aa198;
+  text-align: center;
 }
