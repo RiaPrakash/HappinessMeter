@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, SystemJsNgModuleLoader } from '@angular/core';
 import { MessageService } from '../services/message.service';
 import { Message } from '../models/message';
-import * as Sentiment from 'sentiment';
 
 @Component({
   selector: 'app-tab1',
@@ -43,6 +42,7 @@ export class Tab1Page {
     this.getMessages(); // runs get messages function every time the component is viewed
   }
 
+  //gets message from the database
   getMessages() {
     this.messageService.getMessages().subscribe(data => {
       this.messages = data.map(e => {
@@ -55,7 +55,16 @@ export class Tab1Page {
     });
   }
 
+
   createMessage() {
     this.messageService.createMessage(this.message);
+  }
+
+  send(){
+    this.message.id="1";
+    this.message.score=2;
+    this.message.dateCreated=new Date().toISOString();
+    console.log(this.message);
+    this.createMessage();
   }
 }
