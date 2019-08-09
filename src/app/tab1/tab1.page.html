@@ -7,12 +7,31 @@
 </ion-header>
 
 <ion-content>
-    <ion-card color="dark">
-      <ion-item>
-          <ion-card color="light">
-            <ion-input [(ngModel)]="message.message" placeholder="Enter a message here"></ion-input>
-          </ion-card>
-          <ion-button color="secondary" (click)="send()">Send</ion-button>
-      </ion-item>
-    </ion-card>
+  
+  <!-- Input Message -->
+  <ion-card color="dark">
+    <ion-item>
+        <ion-card color="light">
+          <ion-input [(ngModel)]="message.message"></ion-input>
+        </ion-card>
+        <ion-button color="secondary" (click)="send()">Send</ion-button>
+    </ion-item>
+  </ion-card>
+  
+  <!-- Messages display -->
+  <div class="row">
+    <div class="col-xs-6 col-md-4" *ngFor="let message of messages" class="background-card">
+      <ion-card class="welcome-card">
+        <ion-card-header>
+          <ion-card-subtitle>Date: {{message.dateCreated}}</ion-card-subtitle>
+          <ion-card-subtitle>Score: {{message.score}}</ion-card-subtitle>
+          <ion-card-title>Owner of message: {{message.owner}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <p>Content: {{message.message}}</p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+    
 </ion-content>

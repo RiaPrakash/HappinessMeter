@@ -3,4 +3,5 @@ export class Message {
     score: number;
     message: string;
     dateCreated: string;
+    owner: string;
   }
